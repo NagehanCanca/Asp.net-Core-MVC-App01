@@ -1,0 +1,20 @@
+﻿@model List<OrderProductViewModel>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ürün</th>
+            <th>Miktar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.Quantity</td>
+
+            </tr>
+        }
+    </tbody>
+</table>

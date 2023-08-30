@@ -1,0 +1,27 @@
+﻿@model EmployeeDetailViewMmodel
+
+
+@if(Model is null) 
+{
+    <p>@ViewBag.Mesaj</p>
+}
+else
+{
+    @:Ad : @Model.Name
+    <br />
+    @:Soyad : @Model.Surname
+    <br />
+    @:Pozisyon : @Model.Title
+    <br />
+    @:Doğum Tarihi : @Model.BirthDate
+    <form asp-action="Update" asp-route-id="@Model.EmployeeId" method="post">
+        Telefon: <input asp-for="Phone" />
+        <br />
+        Şehir: <input asp-for ="City" />
+        <br />
+        Ülke: <input asp-for ="Country" />
+        <br />
+        <input asp-for="EmployeeId" type="hidden"/>
+        <button>Güncelle</button>
+    </form>
+}

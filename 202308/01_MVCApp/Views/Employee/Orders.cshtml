@@ -1,0 +1,24 @@
+﻿@model List<OrderListViewModel>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Sipariş No</th>
+            <th>Sipariş Tarihi</th>
+            <th>Müşteri</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OrderNo</td>
+                <td>@item.OrderDate</td>
+                <td>@item.Customer</td>
+                <td><a class="btn btn-primary" asp-action="OrderDetail" asp-route-id="@item.OrderNo">Ürünler</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
